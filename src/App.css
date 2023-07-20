@@ -1,6 +1,7 @@
 *{
   margin:0;
   padding: 0;
+  box-sizing: border-box;
 }
 .App {
   display: flex;
@@ -38,6 +39,9 @@ a{
   cursor: pointer;
   font-size: 15px;
   font:medium;
+}
+.header a:hover{
+  background-color: white;
 }
 .App-header{
   display: flex;
@@ -138,19 +142,32 @@ a{
   color: #999;
 }
 .chat{
+width:100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.chat1{
   display: flex;
   flex-direction: column;
-  height: 100%;
+  background-color: rgb(246, 231, 231);
+  padding:3px;
+  border:1px solid black;
+  overflow-y: scroll;
+  height: 90%;
   width: 90%;
 }
 .Sendmsg{
   align-self: center;
-  justify-self: flex-end;
   display:flex;
   flex-direction: row;
   align-items:center;
   justify-content:center;
   width:50%;
+}
+.chat h2{
+  justify-self: flex-start;
 }
 .Sendmsg button{
   background-color: rgb(154, 154, 227);
@@ -181,15 +198,12 @@ a{
   align-items:center;
   justify-content:flex-start;
   font-size:1.3em;
-  height:60%;
-  width:70%;
-  padding: 5%;
+  height:90%;
+  width:90%;
+  padding: 1%;
   background-color: rgb(203, 233, 241);
   box-shadow: rgb(132, 129, 129) 2px 2px 4px;
   border-radius: 3px;
-}
-.prg div{
-  margin: 10px;
 }
 .searchp{
   align-self: center;
@@ -211,6 +225,9 @@ a{
   margin-right: 10px;
   cursor: pointer;
 }
+.searchp button:hover{
+  background-color: white;
+}
 .searchp input{
   flex-grow: 2.5;
   padding: 3px;
@@ -227,9 +244,8 @@ a{
   align-items:center;
   justify-content:flex-start;
   font-size:1.3em;
-  height:80%;
-  width:70%;
-  padding: 2% 5%;
+  height:95%;
+  width:95%;
   background-color: rgb(203, 233, 241);
   box-shadow: rgb(132, 129, 129) 2px 2px 4px;
   border-radius: 3px;
@@ -257,18 +273,27 @@ a{
   flex-direction: column;
   align-items:center;
   justify-content:flex-start;
-  border:1px solid black;
   background-color: white;
+  padding:3px;
+  border:1px solid black;
+  overflow-y: scroll;
   height: 100%;
   width: 100%;
 }
 .cout{
   background-color: white;
   color: black;
-  max-height: 90%;
-  scroll-behavior: smooth;
+  height: 100%;
+  width:80%;
+  padding:3px;
+  border:1px solid black;
+  overflow-y: scroll;
 }
 textarea{
   height: 90%;
   width: 100%;
+}
+.logout{
+  padding: 1em;
+  border-radius: 50%;
 }

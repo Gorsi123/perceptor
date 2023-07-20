@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styled from 'styled-components'
 import useInput from '../hooks/useInput';
 
@@ -132,6 +132,8 @@ function Login() {
   const [password,handlePassword] = useInput("")
   const [error,setError] = useState("");
   const navigate = useNavigate();
+  useEffect(()=>{
+    if(localStorage.getItem("authToken")) navigate("/")})
 
 
 
@@ -143,7 +145,7 @@ function Login() {
       }
     }
     try{
-      const res = await axios.post("http://localhost:3001/api/user/login",{email,password},config);
+      const res = await axios.post("http://localhost:5000/api/login",{email,password},config);
         localStorage.setItem("authToken",res.data.token);
         navigate("/");
     }catch(err){

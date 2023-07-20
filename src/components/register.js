@@ -140,7 +140,7 @@ function Register() {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    if(localStorage.getItem("authToken")) navigate("/home")
+    if(localStorage.getItem("authToken")) navigate("/")
   },[navigate])
   const handleSubmit = async (e)=>{
     e.preventDefault();
@@ -150,7 +150,7 @@ function Register() {
       }
     }
     try{
-      const res = await axios.post("http://localhost:3001/api/user/register",{username,email,password},config);
+      const res = await axios.post("http://localhost:5000/api/sign-up",{username,email,password},config);
       if(!res.data.success) setError(res.data.error)
       else{
         localStorage.setItem("authToken",res.data.token);
@@ -163,7 +163,7 @@ function Register() {
   }
   return (
     <StyledDiv err={error!==""}>
-       <div className='error'><BiErrorCircle className="icons"/>{error}</div>
+       {error&&<div className='error'><BiErrorCircle className="icons"/>{error}</div>}
       <div className='card'>
         <div id="sidebar"></div>
         <form onSubmit={handleSubmit}>

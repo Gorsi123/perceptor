@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import useInput from "../hooks/useInput";
 function Paragraph(){
+    document.title='paragraph'
     const [topic,setTopic]=useInput('');
     const [error,setError]=useState('');
     const [parag,setParag]=useState('please enter topic in input...')
@@ -17,11 +18,6 @@ function Paragraph(){
             const data=await axios.post("http://localhost:5000/api/paragraph",{topic},config);
              setParag(data.data)
             if(!data.data.success) setError(data.data.error)
-            else{
-              localStorage.setItem("authToken",data.data.token);
-              //   navigate("/");
-            } 
-      
           }catch(err){
             setError(err.response.data.error);
             console.log(error);

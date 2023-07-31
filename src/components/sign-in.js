@@ -39,23 +39,16 @@ gap:10px;
     height:30px;
   }
 .card{
-  width:800px;
+  width:500px;
   max-width:100%;
   display:flex;
-  box-shadow:0 3px 5px rgb(0,0,0,0.2);
+  box-shadow:0 3px 5px rgb(0,0,0.8,0.8);
   border-radius: 20px;
-
-  #sidebar{
-    flex:1;
-    background:url("https://images.unsplash.com/photo-1654555244707-9a4d785a23ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 20px 0 0 20px;
-  }
   form{
-  background:white;
+    width:100%;
+  background:teal;
   padding:40px;
-  border-radius: 0 20px 20px 0;
+  border-radius: 20px 20px 20px 20px;
 display: flex;
 flex-direction: column;
 gap:15px;
@@ -100,7 +93,7 @@ button{
   }
 }
 a{
-  color:teal;
+  color:brown;
   transition:0.3s ease all;
   &:hover{
     text-decoration: none;
@@ -149,10 +142,7 @@ function Login() {
         localStorage.setItem("authToken",res.data.token);
         navigate("/");
     }catch(err){
-      setError(err.response.data.error);
-      setTimeout(()=>{
-        setError("");
-      },5000)
+        setError("couldn't connect to server");
     }
 
   }

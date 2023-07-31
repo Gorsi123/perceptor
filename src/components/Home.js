@@ -1,5 +1,6 @@
 import Login from './login.js'
 const Home=function(){
+    document.title='home'
     const b1=localStorage.getItem('authToken');
     return (
         <div className='home'>

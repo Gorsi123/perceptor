@@ -151,10 +151,11 @@ align-items: center;
 .chat1{
   display: flex;
   flex-direction: column;
-  background-color: rgb(246, 231, 231);
+  background-color: rgb(243, 250, 234);
   padding:3px;
   border:1px solid black;
   overflow-y: scroll;
+  scroll-behavior: smooth;
   height: 90%;
   width: 90%;
 }
@@ -203,7 +204,7 @@ align-items: center;
   padding: 1%;
   background-color: rgb(203, 233, 241);
   box-shadow: rgb(132, 129, 129) 2px 2px 4px;
-  border-radius: 3px;
+  border-radius: 20px;
 }
 .searchp{
   align-self: center;
@@ -248,7 +249,7 @@ align-items: center;
   width:95%;
   background-color: rgb(203, 233, 241);
   box-shadow: rgb(132, 129, 129) 2px 2px 4px;
-  border-radius: 3px;
+  border-radius: 20px;
 }
 .codecon{
   display: flex;
@@ -265,6 +266,7 @@ align-items: center;
   display: flex;
   align-items:center;
   justify-content:center;
+  position:relative;
   height: 100%;
   width: 100%;
 }
@@ -281,6 +283,7 @@ align-items: center;
   width: 100%;
 }
 .cout{
+  position: relative;
   background-color: white;
   color: black;
   height: 100%;
@@ -289,11 +292,39 @@ align-items: center;
   border:1px solid black;
   overflow-y: scroll;
 }
+#ccon{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
 textarea{
-  height: 90%;
+  min-height: 88%;
   width: 100%;
 }
 .logout{
   padding: 1em;
   border-radius: 50%;
+}
+.copy{
+  position:absolute;
+  top:3px;
+  right:3px;
+  padding: 3px;
+  cursor: pointer;
+  box-shadow: rgb(53, 52, 52) 2px 2px 4px;
+  color: brown;
+}
+button{
+  cursor: pointer;
+}
+.cout2{
+  background-color: white;
+  color: black;
+  height: 100%;
+  width:80%;
+  padding:3px;
+  border:1px solid black;
+  overflow-y: scroll;
 }

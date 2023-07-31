@@ -39,23 +39,16 @@ gap:10px;
     height:30px;
   }
 .card{
-  width:800px;
+  width:500px;
   max-width:100%;
   display:flex;
-  box-shadow:0 3px 5px rgb(0,0,0,0.2);
+  box-shadow:0 3px 5px rgb(0,0,0.8,0.8);
   border-radius: 20px;
-
-  #sidebar{
-    flex:1;
-    background:url("https://images.unsplash.com/photo-1654309184335-465ae7e6537a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80");
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 20px 0 0 20px;
-  }
   form{
-  background:white;
+    width:100%;
+  background:teal;
   padding:20px 40px ;
-  border-radius: 0 20px 20px 0;
+  border-radius: 20px 20px 20px 20px;
 display: flex;
 flex-direction: column;
 gap:10px;
@@ -105,7 +98,7 @@ button{
 
 }
 a{
-  color:teal;
+  color:brown;
   transition:0.3s ease all;
   &:hover{
     text-decoration: none;
@@ -158,14 +151,13 @@ function Register() {
       } 
 
     }catch(err){
-      setError(err.response.data.error);
+        setError("couldn't connect to server");
     }
   }
   return (
     <StyledDiv err={error!==""}>
        {error&&<div className='error'><BiErrorCircle className="icons"/>{error}</div>}
       <div className='card'>
-        <div id="sidebar"></div>
         <form onSubmit={handleSubmit}>
         <h1>Register</h1>
         
